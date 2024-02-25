@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="CodePel">
+      <title> Countdown Timer Example </title>
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="./css/style.css">
+      <!-- Demo CSS (No need to include it into your project) -->
+      <link rel="stylesheet" href="./css/demo.css">
+      
+   </head>
+   <body>
+      <header class="cd__intro">
+
+      </header>
+      <!--$%adsense%$-->
+      <main class="cd__main">
+         <!-- Start DEMO HTML (Use the following code into your project)-->
+         <div class="container">
+  <h1 id="headline">Countdown to my birthday</h1>
+  <div id="countdown">
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
+  <div id="content" class="emoji">
+    <span>🥳</span>
+    <span>🎉</span>
+    <span>🎂</span>
+  </div>
+</div>
+         <!-- END EDMO HTML (Happy Coding!)-->
+      </main>
+      <footer class="cd__credit">Author: Matt Smith - Distributed By: <a title="Free web design code & scripts" href="https://www.codepel.com?source=demo-page" target="_blank">CodePel</a></footer>
+      
+      <!-- Script JS -->
+      <script >
+          (function () {
+              const second = 1000,
+                  minute = second * 60,
+                  hour = minute * 60,
+                  day = hour * 24;
+
+              const countDown = new Date('02/27/2024').getTime(),
+                  x = setInterval(function() {
+
+                      const now = new Date().getTime(),
+                          distance = countDown - now;
+
+                      document.getElementById("days").innerText = Math.floor(distance / (day)),
+                          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                  }, 0)
+          }());
+      </script>
+      <!--$%analytics%$-->
+   </body>
+</html>
